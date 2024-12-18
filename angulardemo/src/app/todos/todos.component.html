@@ -1,0 +1,19 @@
+<h3>TODOS</h3>
+<div class="m-3">
+    <input type="text" name="todo" (keyup.enter)="addTodo()" [(ngModel)]="todo">
+</div>
+<div *ngIf="todolist.length == 0 else todos">
+    <p>No items in todolist yet</p>
+</div>
+
+<ng-template #todos>
+        <div *ngFor="let todo of todolist; let i = index">
+            <div class="row mb-2">
+                <!-- <div class='col-md-1'> -->
+                <!-- <input class="toggle" type="checkbox" (click)="toggleTodoComplete(todo)" [checked]="todo.complete"></div> -->
+                <div class='col-md-7'><label>{{todo.title}}</label></div>
+                <div class='col-md-4'><button class="destroy" (click)="removeTodo(todo.id)">Remove</button></div>
+              </div>
+            </div>
+          <div>Items Left : {{todolist.length}}</div>
+</ng-template>

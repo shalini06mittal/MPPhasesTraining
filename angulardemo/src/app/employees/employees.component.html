@@ -1,0 +1,11 @@
+<div *ngIf="employees.length > 0">
+    <div *ngFor="let emp of employees">
+        <app-employee [employee]="emp">
+        </app-employee>     
+    </div>
+    
+</div>
+
+<div class="container" *ngIf="employees.length <= 0">
+    <h1>No employees yet joined your company!!!</h1>
+</div>

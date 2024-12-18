@@ -10,6 +10,8 @@ import { EmployeeComponent } from './employee/employee.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { CountryComponent } from './country/country.component';
 import { StateComponent } from './state/state.component';
+import { EmployeesComponent } from './employees/employees.component';
+import { TodosComponent } from './todos/todos.component';
 // @ - decorator
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { StateComponent } from './state/state.component';
     EmployeeComponent,
     DirectivesComponent,
     CountryComponent,
-    StateComponent
+    StateComponent,
+    EmployeesComponent,
+    TodosComponent
   ],
   imports: [
     BrowserModule,

@@ -17,4 +17,16 @@ export class AppComponent {
     alert('hey')
 
   }
+
+  /**
+   * list of products -> details of every product
+   * * list of employees -> details of every employee
+   * * list of blogs -> details of every blog
+   * * list of hotels -> details of every hotel
+   * employeescomponent -> gets the list of employees
+   * we iterate over the list of employees get each employee
+   * from the list and pass that object to employeecomplonent
+   * 
+   * 
+   */
 }
