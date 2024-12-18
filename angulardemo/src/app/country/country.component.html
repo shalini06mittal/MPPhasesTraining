@@ -1,0 +1,6 @@
+<p>Choose Country</p>
+<h4>{{selectedCountry}}</h4>
+<select name="" id="" [(ngModel)]="selectedCountry">
+    <option *ngFor="let country of countries" value={{country}}>{{country}}</option>
+</select>
+<app-state [country]="selectedCountry"></app-state>

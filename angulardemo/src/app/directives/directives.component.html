@@ -1,0 +1,24 @@
+<h3>Directives if else and for loop</h3>
+<!-- <div *ngIf="persons.length == 0 ">
+    <p>No person registerd yet</p>
+</div>
+<div *ngIf="persons.length > 0 ">
+   <p>{{persons | json}}</p>
+</div> -->
+
+<div *ngIf="persons.length == 0 else t1">
+    <p>No person registerd yet</p>
+</div>
+<ng-template #t1>
+   <ul >
+        <li *ngFor="let person of persons ; let i = index">
+           {{i}} {{person.id}} : {{person.name}}</li>
+   </ul>
+</ng-template>
+<h3>Switch Case</h3>
+<div *ngFor="let p of people" [ngSwitch]="p.country">
+    <div *ngSwitchCase="'UK'" class="text-success">{{p.name}}: {{p.country}}</div>
+    <div *ngSwitchCase="'USA'" class="text-info">{{p.name}}: {{p.country}}</div>
+    <div *ngSwitchCase="'MARS'" class="text-danger">{{p.name}}: {{p.country}}</div>
+    <div *ngSwitchDefault class="text-warning">{{p.name}}: {{p.country}}</div>
+</div>

@@ -1,0 +1,18 @@
+<!-- string interpolation : data binding -->
+<div class="container mt-3">
+  <h1>{{title}}</h1>
+  <p>{{message}}</p>
+  <button (click)="clicked()" 
+  [disabled]="isEnabled">CLick me</button>
+
+  <div class="mt-2">
+    <input type="text" [(ngModel)]="username"
+    placeholder="Enter name">
+  </div>
+
+  <p>Welcome : {{username}}</p>
+    <app-country></app-country>
+  <!-- <app-header></app-header>
+  <app-employee></app-employee>
+  <app-footer></app-footer> -->
+</div>
