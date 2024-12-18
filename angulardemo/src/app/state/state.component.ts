@@ -9,13 +9,13 @@ import { Component, Input } from '@angular/core';
 })
 export class StateComponent {
 
-  // states = {
-  //   UK:['Bristol','London'],
-  //   USA:['Chicago','New York'],
-  //   India:['Delhi','Pune'],
-  // }
+  states:any = {
+    UK:['Bristol','London'],
+    USA:['Chicago','New York'],
+    India:['Delhi','Pune'],
+  }
   @Input()
   country = 'UK';
-  //selectedStates = this.states[this.country];
+  selectedStates = this.states[this.country];
 
 }
