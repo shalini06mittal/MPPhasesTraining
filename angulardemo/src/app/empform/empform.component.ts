@@ -16,7 +16,6 @@ export class EmpformComponent {
         , address:{country:''}}
       }
       saveEmployee(){
-        console.log(this.emp);
-        
+        console.log(this.emp); 
       }
 }

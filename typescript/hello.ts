@@ -29,6 +29,7 @@ class Student{
         
     }
 }
+
 let s1 = new Student('John')
 s1.showName();
 

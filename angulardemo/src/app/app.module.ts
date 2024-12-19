@@ -13,6 +13,8 @@ import { StateComponent } from './state/state.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { TodosComponent } from './todos/todos.component';
 import { EmpformComponent } from './empform/empform.component';
+import { LifecycleComponent } from './lifecycle/lifecycle.component';
+import { ChildComponent } from './lifecycle/child.component';
 // @ - decorator
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { EmpformComponent } from './empform/empform.component';
     StateComponent,
     EmployeesComponent,
     TodosComponent,
-    EmpformComponent
+    EmpformComponent,
+    LifecycleComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,

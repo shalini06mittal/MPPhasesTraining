@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, DoCheck, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   standalone: false,
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit, OnChanges, DoCheck, OnDestroy{
   // js
   x: Promise<string> | null = Promise.resolve("hello world");
   title = 'Welcome To Angular Learning!!';
@@ -14,6 +14,21 @@ export class AppComponent {
   message = 'Something';
   isEnabled:boolean = true;
   username = 'shalini'
+  constructor(){
+    console.log('app component constructor');
+  }
+  ngOnDestroy(): void {
+    console.log('app component destroy');
+  }
+  ngDoCheck(): void {
+    console.log('app component do check');
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('app component on changes');
+  }
+  ngOnInit(): void {
+    console.log('app component on init');
+  }
   clicked(){
     alert('hey')
 
