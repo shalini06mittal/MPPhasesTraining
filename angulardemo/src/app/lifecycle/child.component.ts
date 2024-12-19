@@ -21,20 +21,29 @@ export class ChildComponent implements OnInit, OnChanges , DoCheck, OnDestroy{
     {"country":"usa","states":["Illinois","SFO"]}
     ]
     countrystates:any[]=[]
-
+    interval:any
     ngDoCheck(): void {
       console.log(`child ng do check ${this.country} : ${this.employee.name}`);
       }
+      count = 0;
       constructor() {
       console.log(`child constructor ${this.country}`);
+      this.interval = setInterval(()=>{
+          console.log(++this.count);
+          
+      },1000)
       }
       ngOnChanges(changes: SimpleChanges): void {
       console.log(`child ng on changes ${this.country} : ${this.employee.name}`);
       this.countrystates = this.data.filter(item=>item.country === this.country)
       }
+      
       ngOnInit(): void {
       console.log(`child ng on init ${this.country}`);
-      } ngOnDestroy(): void {
+      } 
+      
+      ngOnDestroy(): void {
       console.log(`child destroy`);
+      clearInterval(this.interval)
       }
 }

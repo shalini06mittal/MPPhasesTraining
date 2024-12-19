@@ -14,6 +14,20 @@ export class AppComponent implements OnInit, OnChanges, DoCheck, OnDestroy{
   message = 'Something';
   isEnabled:boolean = true;
   username = 'shalini'
+
+  newemp:any;
+  
+  showForm:boolean = false;
+
+  toggleForm(){
+    this.showForm = !this.showForm;
+  }
+  newEmpAdded(newemp:any){
+      console.log(newemp)
+      this.newemp = newemp;
+      this.showForm = !this.showForm;
+    }
+
   constructor(){
     console.log('app component constructor');
   }

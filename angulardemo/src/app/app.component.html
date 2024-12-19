@@ -12,11 +12,12 @@
 
   <p>Welcome : {{username}}</p>
     <app-country></app-country> -->
-  <!-- <app-header></app-header>
-  <app-empform></app-empform>
-  <app-employees></app-employees>
-  <app-footer></app-footer> -->
-  <app-lifecycle></app-lifecycle>
+  <app-header></app-header>
+  <button class="btn-primary mb-3" (click)="toggleForm()">Show Emp Form</button>
+  <app-empform (empadded)="newEmpAdded($event)" *ngIf="showForm"></app-empform>
+  <app-employees [newemp]="newemp"></app-employees>
+  <app-footer></app-footer>
+  <!-- <app-lifecycle></app-lifecycle> -->
   <!-- <app-directives></app-directives>
   <p>{{'2024-12-22'}}</p>
   <p>{{'2024-12-22' | date}}</p> -->

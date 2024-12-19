@@ -1,7 +1,10 @@
 <div *ngIf="employees.length > 0">
     <div *ngFor="let emp of employees">
         <app-employee [employee]="emp">
-        </app-employee>     
+        </app-employee>    
+        <button (click)="delete(emp)">Delete</button>
+        <button (click)="edit(emp)">Edit</button>
+ 
     </div>
     
 </div>
