@@ -20,3 +20,5 @@ var Student = /** @class */ (function () {
 }());
 var s1 = new Student('John');
 s1.showName();
+var x = Promise.resolve("hello world");
+console.log(x);

@@ -1,0 +1,101 @@
+<h3>Add New Employee</h3>
+{{empform.value | json}}
+<div class="mb-2">
+    <!-- exports lots of properties to be used within HTML template-->
+    <form #empform = "ngForm" (submit)="saveEmployee()">
+        <!-- <input type="text" class="form-control" [class.is-invalid]="ename.touched && ename.invalid" required pattern="^[A-Za-z\s]+$" minlength="3"
+        name="ename" [(ngModel)]="emp.ename" #ename="ngModel"> -->
+        <!-- provides built-in classes to use for validations -->
+        <!-- {{ename.className}} -->
+         <!-- <div *ngIf="ename.touched && ename.errors && ename.invalid">
+            <small class="text-danger" *ngIf="ename.errors['required']">
+                    Name Required
+            </small>
+            <small class="text-danger" *ngIf="ename.errors['pattern']">
+                Name can contain only alphabets or space 
+            </small>
+            <small class="text-danger" *ngIf="ename.errors['minlength']">
+                Name shold have atleast 3 characters
+        </small>
+        </div> -->
+        <div class="mb-3">
+            <input type="text" class="form-control" [class.is-invalid]="eid.invalid && eid.touched" required
+                placeholder="enter id" #eid="ngModel" [(ngModel)]="emp.eid" name="eid" />
+            <div *ngIf="eid.touched">
+                <div *ngIf="eid.errors && (eid.invalid)">
+                    <small class="text-danger" *ngIf="eid.errors['required']">
+                        Id required </small>
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" [class.is-invalid]="ename.invalid && ename.touched" minlength="5"
+                required placeholder="enter name" #ename="ngModel" [(ngModel)]="emp.ename" name="ename" />
+            <div *ngIf="ename.touched">
+                <div *ngIf="ename.errors && (ename.invalid)">
+                    <small class="text-danger" *ngIf="ename.errors['required']">
+                        ename required </small>
+                    <small class="text-danger" *ngIf="ename.errors['minlength']">
+                        it should have minimin 5 characters</small>
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <input type="email" class="form-control" [class.is-invalid]="email.invalid && email.touched" minlength="5"
+                required placeholder="enter email" #email="ngModel" [(ngModel)]="emp.email" name="email" />
+            <!-- <span>{{ename.className}}</span> -->
+            <div *ngIf="email.touched">
+                <div *ngIf="email.errors && (email.invalid)">
+                    <small class="text-danger" *ngIf="email.errors['required']">
+                        email required </small>
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <input type="password" class="form-control" [class.is-invalid]="password.invalid && password.touched"
+                minlength="5" required placeholder="enter password" #password="ngModel" [(ngModel)]="emp.password" name="password" />
+            <!-- <span>{{ename.className}}</span> -->
+            <div *ngIf="password.touched">
+                <div *ngIf="password.errors && (password.invalid)">
+                    <small class="text-danger" *ngIf="password.errors['required']">
+                        password required </small>
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" [class.is-invalid]="phone.invalid && phone.touched" 
+                required placeholder="enter phone" #phone="ngModel" [(ngModel)]="emp.phone" name="phone" />
+            <!-- <span>{{ename.className}}</span> -->
+            <div *ngIf="phone.touched">
+                <div *ngIf="phone.errors && (phone.invalid)">
+                    <small class="text-danger" *ngIf="phone.errors['required']">
+                        Phone required </small>
+                        
+                </div>
+            </div>
+        </div>
+        <div ngModelGroup="address" >
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="enter city" #city="ngModel" [(ngModel)]="emp.address.city" name="city" />
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="enter country" required #country="ngModel" [(ngModel)]="emp.address.country"
+                    name="country" />
+                <div *ngIf="country.touched">
+                    <div *ngIf="country.errors && (country.invalid)">
+                        <small class="text-danger" *ngIf="country.errors['required']">
+                            Country required </small>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="enter zipcode" #zipcode="ngModel" 
+                [(ngModel)]="emp.address.zipcode"
+                    name="zipcode" />
+            </div>
+        </div>
+        <div class="mb-3">
+            <button type="submit">Add Employee</button>
+        </div>
+    </form>
+</div>

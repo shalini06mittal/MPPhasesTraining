@@ -31,3 +31,9 @@ class Student{
 }
 let s1 = new Student('John')
 s1.showName();
+
+let x:Promise<string> = Promise.resolve("hello world");
+
+x.then()
+
+console.log(x);

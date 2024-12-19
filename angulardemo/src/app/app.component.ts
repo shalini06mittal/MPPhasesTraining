@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   // js
+  x: Promise<string> | null = Promise.resolve("hello world");
   title = 'Welcome To Angular Learning!!';
   // h1 => text of he
   message = 'Something';
