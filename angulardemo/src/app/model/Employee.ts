@@ -9,5 +9,6 @@ export interface Employee{
          city?:string,
          country:string,
          zipcode?:number
-     }
+     };
+     id?:number;
 }

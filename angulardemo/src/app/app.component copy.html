@@ -1,0 +1,33 @@
+<!-- string interpolation : data binding -->
+<div class="container mt-3">
+  <!-- <h1>{{title}}</h1>
+  <p>{{message}}</p>
+  <button (click)="clicked()" 
+  [disabled]="isEnabled">CLick me</button>
+
+  <div class="mt-2">
+    <input type="text" [(ngModel)]="username"
+    placeholder="Enter name">
+  </div>
+
+  <p>Welcome : {{username}}</p>
+    <app-country></app-country> -->
+    <!-- <app-observables></app-observables> -->
+    <!-- <h1>App Component</h1>
+<p>{{service.message}}</p>
+
+    <app-service></app-service> -->
+  <app-header></app-header>
+  <button class="btn-primary mb-3" (click)="toggleForm()">Show Emp Form</button>
+  <app-empform (empadded)="newEmpAdded($event)" *ngIf="showForm"></app-empform>
+  <app-employees [newemp]="newemp"></app-employees>
+  <app-footer></app-footer>
+  <!-- <app-lifecycle></app-lifecycle> -->
+  <!-- <app-directives></app-directives>
+  <p>{{'2024-12-22'}}</p>
+  <p>{{'2024-12-22' | date}}</p> -->
+  <!-- ngNonBindable : it will not interpret or execute string interpolation syntax -->
+  <!-- <p ngNonBindable>{{title | lowercase}}</p>
+  <app-todos></app-todos>
+  <p>{{x | async}}</p> -->
+</div>

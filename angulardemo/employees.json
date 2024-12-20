@@ -1,0 +1,86 @@
+{
+  "employees": [
+    {
+      "eid": 1,
+      "ename": "shalini",
+      "password": "shalini",
+      "email": "shalini@gmail.com",
+      "phone": "1321312312",
+      "address": {
+        "country": "India",
+        "city": "Delhi",
+        "zipcode": 787878
+      },
+      "id": 1
+    },
+    {
+      "eid": 2,
+      "ename": "shalini123",
+      "password": "shalini123",
+      "email": "shalini@gmail.com",
+      "phone": "1321312312",
+      "address": {
+        "country": "India",
+        "city": "Delhi",
+        "zipcode": 909090
+      },
+      "id": "2"
+    },
+    {
+      "eid": 3,
+      "ename": "shalini123",
+      "password": "shalini123",
+      "email": "shalini@gmail.com",
+      "phone": "1321312312",
+      "address": {
+        "country": "India",
+        "city": "Delhi",
+        "zipcode": 909090
+      },
+      "id": "3"
+    },
+    {
+      "eid": "5",
+      "ename": "pooja",
+      "email": "p@s.d",
+      "password": "pooja",
+      "phone": "567896789",
+      "address": {
+        "city": "Pune",
+        "country": "India",
+        "zipcode": "79799"
+      },
+      "id": "5"
+    },
+    {
+      "eid": "6",
+      "ename": "Rushal",
+      "email": "rush@d.com",
+      "password": "rushil",
+      "phone": "67890678",
+      "address": {
+        "city": "Delhi",
+        "country": "India",
+        "zipcode": "56789"
+      },
+      "id": "6"
+    }
+  ],
+  "users": [
+    {
+      "username": "abc",
+      "password": "abc123",
+      "id": "f556"
+    },
+    {
+      "username": "pqr",
+      "password": "pqr123",
+      "id": "a348"
+    },
+    {
+      "username": "user",
+      "password": "user123",
+      "id": "bc80"
+    }
+  ]
+}

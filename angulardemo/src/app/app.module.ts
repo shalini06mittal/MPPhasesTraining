@@ -15,6 +15,10 @@ import { TodosComponent } from './todos/todos.component';
 import { EmpformComponent } from './empform/empform.component';
 import { LifecycleComponent } from './lifecycle/lifecycle.component';
 import { ChildComponent } from './lifecycle/child.component';
+import { ServiceComponent } from './service/service.component';
+import { ObservablesComponent } from './observables/observables.component';
+import { HttpClientModule, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
 // @ - decorator
 @NgModule({
   declarations: [
@@ -29,14 +33,17 @@ import { ChildComponent } from './lifecycle/child.component';
     TodosComponent,
     EmpformComponent,
     LifecycleComponent,
-    ChildComponent
+    ChildComponent,
+    ServiceComponent,
+    ObservablesComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [provideHttpClient(withInterceptorsFromDi())],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

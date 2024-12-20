@@ -1,4 +1,5 @@
 import { Component, DoCheck, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { DemoService } from './service/demo.service';
 
 @Component({
   selector: 'app-root',
@@ -28,20 +29,20 @@ export class AppComponent implements OnInit, OnChanges, DoCheck, OnDestroy{
       this.showForm = !this.showForm;
     }
 
-  constructor(){
+  constructor(public service:DemoService){
     console.log('app component constructor');
   }
   ngOnDestroy(): void {
-    console.log('app component destroy');
+   // console.log('app component destroy');
   }
   ngDoCheck(): void {
-    console.log('app component do check');
+    //console.log('app component do check');
   }
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('app component on changes');
+    //console.log('app component on changes');
   }
   ngOnInit(): void {
-    console.log('app component on init');
+   // console.log('app component on init');
   }
   clicked(){
     alert('hey')
