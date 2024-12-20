@@ -26,6 +26,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
+import { EmpeditformComponent } from './empeditform/empeditform.component';
 // @ - decorator
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { MatInputModule } from '@angular/material/input';
     LoginComponent,
     ProfileComponent,
     PagenotfoundComponent,
-    ProfiledetailComponent
+    ProfiledetailComponent,
+    EmpeditformComponent
   ],
   imports: [
     BrowserModule,

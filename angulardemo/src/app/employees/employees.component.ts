@@ -38,6 +38,7 @@ export class EmployeesComponent implements OnInit {
   edit(emp: Employee) {
     // complete the code to display a form to edit and update the employee
     console.log(emp);
+    this.router.navigateByUrl('/edit',{state:emp});
   }
   viewProfile(id:number)
   	{

@@ -2,7 +2,7 @@
   "employees": [
     {
       "eid": 1,
-      "ename": "shalini",
+      "ename": "shalu mittal",
       "password": "shalini",
       "email": "shalini@gmail.com",
       "phone": "1321312312",
@@ -11,20 +11,22 @@
         "city": "Delhi",
         "zipcode": 787878
       },
-      "id": "1"
+      "id": "1",
+      "navigationId": 1
     },
     {
       "eid": 2,
       "ename": "shalini123",
       "password": "shalini123",
-      "email": "shalini@gmail.com",
+      "email": "shalini123@gmail.com",
       "phone": "1321312312",
       "address": {
         "country": "India",
         "city": "Delhi",
         "zipcode": 909090
       },
-      "id": "2"
+      "id": "2",
+      "navigationId": 2
     },
     {
       "eid": 3,
