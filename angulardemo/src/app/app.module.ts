@@ -19,6 +19,13 @@ import { ServiceComponent } from './service/service.component';
 import { ObservablesComponent } from './observables/observables.component';
 import { HttpClientModule, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './profile/profile.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { ProfiledetailComponent } from './profiledetail/profiledetail.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
 // @ - decorator
 @NgModule({
   declarations: [
@@ -36,14 +43,17 @@ import { LoginComponent } from './login/login.component';
     ChildComponent,
     ServiceComponent,
     ObservablesComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent,
+    PagenotfoundComponent,
+    ProfiledetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,MatButtonModule, MatCardModule,MatInputModule
   ],
-  providers: [provideHttpClient(withInterceptorsFromDi())],
+  providers: [provideHttpClient(withInterceptorsFromDi()), provideAnimationsAsync()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

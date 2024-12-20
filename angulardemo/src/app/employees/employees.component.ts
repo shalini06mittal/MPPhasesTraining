@@ -2,6 +2,7 @@ import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { employees } from '../model/data';
 import { Employee } from '../model/Employee';
 import { EmphttpService } from '../service/emphttp.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-employees',
@@ -15,7 +16,7 @@ export class EmployeesComponent implements OnInit {
   @Input()
   newemp: any = {};
 
-  constructor(public empservice:EmphttpService){
+  constructor(public empservice:EmphttpService, private router:Router, private route:ActivatedRoute){
 
   }
   ngOnInit(): void {
@@ -38,4 +39,10 @@ export class EmployeesComponent implements OnInit {
     // complete the code to display a form to edit and update the employee
     console.log(emp);
   }
+  viewProfile(id:number)
+  	{
+      //http://localhost:4200/employees/1
+      this.router.navigate([id], {relativeTo:this.route})
+  	}
+
 }
