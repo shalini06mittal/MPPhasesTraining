@@ -48,7 +48,10 @@ public class LoginServlet extends HttpServlet {
 				}
 				else
 				{
-					response.sendRedirect("login.html");
+					//response.sendRedirect("login.html");
+					RequestDispatcher dispatcher = request.getRequestDispatcher("/login.html");
+					out.println("<p style='color:red'>Invalid Credentials</p>");
+					dispatcher.include(request, response);
 				}
 		
 	}
