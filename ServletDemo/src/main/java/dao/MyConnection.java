@@ -7,13 +7,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 public class MyConnection {
 	
-	private static Connection con;
-
-	static{
-		setConnection();
-	}
-	public static void setConnection(){
+	
+	public static Connection getConnection(){
 		System.out.println("set conn");
+		Connection con = null;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/java","root","root1234");
@@ -22,21 +19,8 @@ public class MyConnection {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-	}
-	public static Connection getConnection(){
 		return con;
 	}
-	public static void closeConnection(){
-		try {
-			con.close();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	public static ResultSet runSql(String sql) throws SQLException {
-		Statement sta = con.createStatement();
-		return sta.executeQuery(sql);
-	}
+	
 }
 

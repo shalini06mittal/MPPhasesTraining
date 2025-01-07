@@ -43,7 +43,8 @@ public class CustomerDatabase {
 		ArrayList<Customer> customers = new ArrayList<>();
 		try {
 			
-			ResultSet rs = MyConnection.runSql("select * from customer");			
+			Statement statement = con.createStatement();
+			ResultSet rs = statement.executeQuery("select * from customer");			
 			while(rs.next())
 			{
 				Customer customer = new Customer();
@@ -81,7 +82,9 @@ public class CustomerDatabase {
 	{
 		Customer customer = null;
 		try {
-			ResultSet rs = MyConnection.runSql("select * from customer where username='"+username+"'");			
+			Connection con = MyConnection.getConnection();
+			Statement statement = con.createStatement();
+			ResultSet rs = statement.executeQuery("select * from customer where username='"+username+"'");			
 			while(rs.next())
 			{
 				customer = new Customer();
