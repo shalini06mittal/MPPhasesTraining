@@ -36,23 +36,38 @@ public class ProfileServlet extends HttpServlet {
 		CustomerDatabase database = new CustomerDatabase();
 		HttpSession session = request.getSession();
 		String username = (String) session.getAttribute("username");
-		Customer customer = database.getCustomer(username);
-
-		response.setContentType("text/html");
-		response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
-		response.setHeader("Pragma", "no-cache");//http1.0
-		response.setHeader("Pragma", "0");//proxies
-
-		PrintWriter out = response.getWriter();
-
-		out.println("<div>"+"<p>Name :"+ customer.getName() +"</p>"
-				+"<p>Email :"+ customer.getEmail() +"</p>"
-				+"<p>City :"+ customer.getCity() +"</p>"
-				+"<p>Gender :"+ customer.getGender() +"</p>"
-				+"<p>Phone :"+ customer.getPhone() +"</p>"
-				+ "</div>");
-		out.println("<div><a href='welcome'>Welcome</a>");
-		out.println("<div><a href='logout'>Logout</a>");
+		if(username != null) {
+			Customer customer = database.getCustomer(username);
+	
+			System.out.println(customer);
+			response.setContentType("text/html");
+			PrintWriter out = response.getWriter();
+			if(customer != null) {
+			
+				response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
+				response.setHeader("Pragma", "no-cache");//http1.0
+				response.setHeader("Pragma", "0");//proxies
+		
+				
+		
+				out.println("<div>"+"<p>Name :"+ customer.getName() +"</p>"
+						+"<p>Email :"+ customer.getEmail() +"</p>"
+						+"<p>City :"+ customer.getCity() +"</p>"
+						+"<p>Gender :"+ customer.getGender() +"</p>"
+						+"<p>Phone :"+ customer.getPhone() +"</p>"
+						+ "</div>");
+			}
+			else {
+				out.println("<div>No customer</div>");
+			
+				
+			}
+			out.println("<div><a href='welcome'>Welcome</a></div>");
+			out.println("<div><a href='logout'>Logout</a></div>");
+		}
+		else {
+			response.sendRedirect("login.html");
+		}
 	}
 
 }

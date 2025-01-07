@@ -84,7 +84,10 @@ public class CustomerDatabase {
 		try {
 			Connection con = MyConnection.getConnection();
 			Statement statement = con.createStatement();
-			ResultSet rs = statement.executeQuery("select * from customer where username='"+username+"'");			
+			String sql = "select * from customer where username='"+username+"'";
+			System.out.println(sql);
+			ResultSet rs = statement.executeQuery(sql);	
+
 			while(rs.next())
 			{
 				customer = new Customer();
