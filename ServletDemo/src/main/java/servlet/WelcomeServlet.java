@@ -30,6 +30,13 @@ public class WelcomeServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+//		out.println("Welcome "+request.getParameter("username"));
+		out.println("Welcome "+session.getAttribute("username"));
+		out.println("<div><a href='profile'>Profile</a>");
+		out.println("<div><a href='logout'>Logout</a>");
 	}
 
 	/**
