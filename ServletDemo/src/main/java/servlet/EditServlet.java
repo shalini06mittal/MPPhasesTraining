@@ -47,7 +47,7 @@ public class EditServlet extends HttpServlet {
 		out.println("<html><body><h1>Edit!!</h1>");
 		out.println("<form action='edit' method='post'>");
 		out.println("<div>Username : <input type='text' value='"+customer.getUsername()+"' name='username' readonly='readonly'></div>");
-		out.println("<div>Name : <input type='text' value='"+customer.getName()+"' name='cname'></div>");
+		out.println("<div>Name : <input type='text' value='"+customer.getName()+"' name='name'></div>");
 		out.println("<div>Phone : <input type='text' value='"+customer.getPhone()+"' name='phone'></div>");
 		out.println("<div>Email : <input type='text' value='"+customer.getEmail()+"' name='email'></div>");
 		out.println("<div>Male : <input type='radio' value='male' name='gender' ");

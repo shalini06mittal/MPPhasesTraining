@@ -41,7 +41,7 @@ public class CustomerRegistrationServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		if( (name != null && !name.trim().isEmpty())&& (username !=null && !username.trim().isEmpty() ) &&
 				(!!email.isEmpty() || email != null) && (!phone.isEmpty() && phone != null) && 
-				(!gender.isEmpty() || gender != "") && (!city.isEmpty() || city != null))
+				(!gender.isEmpty() || gender != "") && (!city.isEmpty() || city != null)&& (!passwrod.isEmpty() || passwrod != null))
 		{
 			System.out.println("if not null");
 		

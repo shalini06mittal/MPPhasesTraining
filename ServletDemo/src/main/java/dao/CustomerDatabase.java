@@ -15,7 +15,7 @@ public class CustomerDatabase {
 	{
 		System.out.println("insert "+c);
 		Connection con = MyConnection.getConnection();
-		String sql = "insert into customer values(?,?,?,?,?,?,?)";
+		String sql = "insert into customer(username, password, name, email, phone, city, gender) values(?,?,?,?,?,?,?)";
 		try {
 			PreparedStatement preparedStatement = con.prepareStatement(sql);
 			preparedStatement.setString(1, c.getUsername());
@@ -48,13 +48,13 @@ public class CustomerDatabase {
 			while(rs.next())
 			{
 				Customer customer = new Customer();
-				customer.setUsername(rs.getString(1));
-				customer.setPassword(rs.getString(2));
-				customer.setName(rs.getString(3));
-				customer.setEmail(rs.getString(4));
-				customer.setPhone(rs.getString(5));
-				customer.setCity(rs.getString(6));
-				customer.setGender(rs.getString(7));				
+				customer.setName(rs.getString(1));
+				customer.setPhone(rs.getString(2));
+				customer.setEmail(rs.getString(3));
+				customer.setCity(rs.getString(4));
+				customer.setGender(rs.getString(5));	
+				customer.setUsername(rs.getString(6));
+				customer.setPassword(rs.getString(7));;				
 				customers.add(customer);
 			}
 			
@@ -91,13 +91,14 @@ public class CustomerDatabase {
 			while(rs.next())
 			{
 				customer = new Customer();
-				customer.setUsername(rs.getString(1));
-				customer.setPassword(rs.getString(2));
-				customer.setName(rs.getString(3));
-				customer.setEmail(rs.getString(4));
-				customer.setPhone(rs.getString(5));
-				customer.setCity(rs.getString(6));
-				customer.setGender(rs.getString(7));				
+				customer.setName(rs.getString(1));
+				customer.setPhone(rs.getString(2));
+				customer.setEmail(rs.getString(3));
+				customer.setCity(rs.getString(4));
+				customer.setGender(rs.getString(5));	
+				customer.setUsername(rs.getString(6));
+				customer.setPassword(rs.getString(7));
+							
 			}
 			
 		}
@@ -115,7 +116,7 @@ public class CustomerDatabase {
 		System.out.println("update");
 		System.out.println(customer);
 		try {
-			PreparedStatement statement = con.prepareStatement("update customer set cname=?,email=?,phone=?,city=?,gender=?"
+			PreparedStatement statement = con.prepareStatement("update customer set name=?,email=?,phone=?,city=?,gender=?"
 					+ "where username=?");
 			statement.setString(1, customer.getName());
 			statement.setString(2, customer.getEmail());
