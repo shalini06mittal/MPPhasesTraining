@@ -43,7 +43,8 @@ public class LoginServlet extends HttpServlet {
 				LoginDatabase database = new LoginDatabase();
 				if(database.validate(login))
 				{
-					out.print("<h1>Welcome</h1");
+					RequestDispatcher dispatcher = request.getRequestDispatcher("/welcome");
+					dispatcher.forward(request, response);
 				}
 				else
 				{
