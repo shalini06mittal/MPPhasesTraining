@@ -1,0 +1,62 @@
+drop table java.customer;
+create table java.customer(
+    `name` VARCHAR(255) ,
+    `phone` VARCHAR(255) ,
+    `email` VARCHAR(100) ,
+    `city` VARCHAR(100) ,
+    `gender` VARCHAR(100) ,
+    `username` VARCHAR(100) primary key,
+    `password` VARCHAR(100) 
+);
+insert into java.customer(name, phone,email,city,gender,username,password)
+values('shalini','1212121212','sh@gmail.com','Mum','F','shalu','shalu'),
+('riya','2323232323','riya@gmail.com','Hyd','F','riya','riya');
+
+
+create table java.invoice(invid int primary key auto_increment, 
+invdate datetime not null default current_timestamp,
+customer varchar(100) not null,
+address varchar(250) not null,
+amount decimal(10,3) not  null,
+deldate datetime,
+foreign key(customer) references customer(username)
+);
+INSERT INTO `java`.`invoice`
+(
+`invdate`,
+`customer`,
+`address`,
+`amount`,
+`deldate`)
+VALUES
+(
+'2025-01-05',
+'shalu',
+'shalu some residing address',
+23000,
+'2025-01-10'),
+(
+'2025-01-07',
+'shalu',
+'shalu some residing address',
+56000,
+'2025-01-13'),
+(
+'2024-12-05',
+'sam',
+'sam some residing address',
+89000,
+'2024-12-15'),
+(
+'2024-12-20',
+'shalu',
+'shalu mom residing address',
+35000,
+'2024-12-30'),
+(
+'2025-01-05',
+'max',
+'max some residing address',
+8757876,
+'2025-01-10');
+
